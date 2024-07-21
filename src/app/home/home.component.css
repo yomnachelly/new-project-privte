@@ -1,0 +1,4 @@
+.custom-carousel-image {
+    height: 450px; /* Ajustez cette valeur selon vos besoins */
+    object-fit: cover;
+}

@@ -1,0 +1,56 @@
+<div class="container mt-5 m-1">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card" style="width: 18rem;">
+          <img [src]="img" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Journée Scientifique</h5>
+            <p class="card-text">🧑‍🔬 #journée_scientifique sur les tendances de la #santénumérique en Tunisie 🇹🇳 et dans le Monde</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">📅 Mercredi 31 mai 2024</li>
+            <li class="list-group-item"> ⛳ Auditorium #ibnkhaldun, </li>
+            <li class="list-group-item">Cité des Sciences à Tunis.
+              🕧 08h30-16h00</li>
+          </ul>  
+          <div class="card-body">
+            <a href="#" class="card-link">#santénumérique en Tunisie 🇹🇳 et dans le Monde</a>
+            <a href="#" class="card-link">autre</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h1 style="text-decoration: underline;">Formulaire</h1>
+        <h3>Centre Informatique du Ministère de la Santé</h3>
+        <form style="border: 1px solid #dd9e9e; padding: 20px; border-radius: 5px;">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input [(ngModel)]="user.nom" type="text" class="form-control" id="name" placeholder="Votre nom">
+          </div>
+          <div class="form-group">
+            <label for="surname">Prénom</label>
+            <input [(ngModel)]="user.prenom"  type="text" class="form-control" id="surname" placeholder="Votre prénom">
+          </div>
+          <div class="form-group">
+            <label for="idCard">Numéro de carte d'identité</label>
+            <input [(ngModel)]="user.numc" type="text" class="form-control" id="idCard" placeholder="Votre numéro de carte d'identité">
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Numéro de téléphone</label>
+            <input [(ngModel)]="user.numt" type="text" class="form-control" id="phoneNumber" placeholder="Votre numéro de téléphone">
+          </div>
+          <div class="form-group">
+            <label for="gmail">gmail</label>
+            <input [(ngModel)]="user.gmail" type="email" class="form-control" id="phoneNumber" placeholder="Votre gmail">
+          </div>
+          <div class="form-group">
+            <label for="mot de passe">mot de passe</label>
+            <input [(ngModel)]="user.passe" type="password" class="form-control" id="phoneNumber" placeholder="Votre mot de passe">
+          </div>
+          <button (click)="ajout()"  type="submit" class="btn btn-primary mt-2">Soumettre</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  
