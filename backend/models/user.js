@@ -15,6 +15,12 @@ const User=mongoose.model('User',{
     password :{
         type:String
     },
+    numT :{
+        type:Number
+    },
+    numc :{
+        type:Number
+    }
 
 
 

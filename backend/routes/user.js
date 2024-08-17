@@ -25,34 +25,31 @@ router.post('/register', async (req, res) => {
 
 
 
-
-
-
-
 // Route de connexion
 router.post('/login', async (req, res) => {
-   
-        const data = req.body;
-        const user = await User.findOne({ email: data.email });
-        if(!user){
-            res.status(404).send('email invalide');
-        }
-        else{
-            validPass=bcrypt.compareSync(data.password,user.password)
-            if(!validPass){
-                res.status(401).send('email or password invalid')
-            }
-            else{
-                payload={
-                    _id: user._id,
-                    email:user.email,
-                    name:user.name
-                }
-                token =jwt.sign(payload,'123457')
-                res.status(200).send({mytoken:token})
-            }
-        }
-
+  try {
+    const data = req.body;
+    const user = await User.findOne({ email: data.email });
+    if (!user) {
+      res.status(404).send('email invalide');
+    } else {
+      const validPass = bcrypt.compareSync(data.password, user.password);
+      if (!validPass) {
+        res.status(401).send('email or password invalid');
+      } else {
+        const payload = {
+          _id: user._id,
+          email: user.email,
+          name: user.name
+        };
+        const token = jwt.sign(payload, '123457');
+        res.status(200).send({ mytoken: token });
+      }
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Erreur interne');
+  }
 });
 
 

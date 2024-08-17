@@ -1,25 +1,68 @@
-<div class="container mt-5 ">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card mt-5">
-          <div class="card-header text-center">
-            <h3>Authentification des agents de l'hôpital</h3>
-          </div>
-          <div class="card-body">
-            <form (ngSubmit)="onSubmit()">
-              <div class="form-group">
-                <label for="username">Nom d'utilisateur</label>
-                <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" placeholder="Entrez votre nom d'utilisateur" required>
-              </div>
-              <div class="form-group">
-                <label for="password">Mot de passe</label>
-                <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block mt-2">Se connecter</button>
-            </form>
-          </div>
+<!--<div class="card container mt-5 pt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card border-primary mt-3 shadow-lg">
+        <div class="card-header text-center bg-primary text-white">
+          <h3>Authentification des agents de l'hôpital</h3>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="username" class="font-weight-bold">Nom & prénom</label>
+              <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" placeholder="Entrez votre nom d'utilisateur" required>
+            </div>
+            <div class="form-group">
+              <label for="email" class="font-weight-bold">Adresse e-mail</label>
+              <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Entrez votre adresse e-mail" required>
+            </div>
+            <div class="form-group">
+              <label for="password" class="font-weight-bold">Mot de passe</label>
+              <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required [ngClass]="{'is-invalid': passwordError}">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-2 shadow-lg">Se connecter</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
-  
+</div>-->
+<div class="container-fluid">
+  <div class="row no-gutters">
+    <div class="col-md-3 form-column">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="text-center">Welcome Back!</h4>
+          <p class="text-center">Sign in to continue to CIMS.</p>
+          <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" [(ngModel)]="username" name="username" class="form-control" placeholder="Entrez votre nom d'utilisateur" required>
+            </div>
+            <div class="form-group">
+              <label for="email">email</label>
+              <input type="gmail" id="password" [(ngModel)]="email" name="email" class="form-control" placeholder="Entrez votre email" required [ngClass]="{'is-invalid': passwordError}">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required [ngClass]="{'is-invalid': passwordError}">
+            </div>
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="rememberMe">
+              <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+          </form>
+          <div class="text-center mt-3">
+            <a href="#">Forgot your password?</a>
+          </div>
+          <div class="text-center mt-3">
+            <p>Don't have an account? <a routerLink="/form">Signup now</a></p>
+          </div>
+          <p class="text-center mt-4">© 2024 CIMS. Crafted with ❤️ by Themesbrand</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 image-column"></div>
+  </div>
+</div>
+
